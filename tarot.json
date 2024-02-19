@@ -5,7 +5,6 @@
             "name": "The Fool",
             "number": "0",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m00.jpg",
             "fortune_telling": [
                 "Watch for new projects and new beginnings",
@@ -54,7 +53,6 @@
             "name": "The Magician",
             "number": "1",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m01.jpg",
             "fortune_telling": [
                 "A powerful man may play a role in your day",
@@ -98,7 +96,6 @@
             "name": "The High Priestess",
             "number": "2",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m02.jpg",
             "fortune_telling": [
                 "A mysterious woman arrives",
@@ -145,7 +142,6 @@
             "name": "The Empress",
             "number": "3",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m03.jpg",
             "fortune_telling": [
                 "Pregnancy is in the cards",
@@ -193,7 +189,6 @@
             "name": "The Emperor",
             "number": "4",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m04.jpg",
             "fortune_telling": [
                 "A father figure arrives",
@@ -238,7 +233,6 @@
             "name": "The Hierophant",
             "number": "5",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m05.jpg",
             "fortune_telling": [
                 "Expect to be caught in a misdeed and punished accordingly",
@@ -285,7 +279,6 @@
             "name": "The Lovers",
             "number": "6",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m06.jpg",
             "fortune_telling": [
                 "A new personal or professional relationship blossoms",
@@ -330,7 +323,6 @@
             "name": "The Chariot",
             "number": "7",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m07.jpg",
             "fortune_telling": [
                 "Victory is a certainty",
@@ -374,7 +366,6 @@
             "name": "Strength",
             "number": "8",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m08.jpg",
             "fortune_telling": [
                 "Your self-control will be tested",
@@ -417,7 +408,6 @@
             "name": "The Hermit",
             "number": "9",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m09.jpg",
             "fortune_telling": [
                 "A period of loneliness begins",
@@ -461,7 +451,6 @@
             "name": "Wheel of Fortune",
             "number": "10",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m10.jpg",
             "fortune_telling": [
                 "Some events are in the hands of heaven",
@@ -506,7 +495,6 @@
             "name": "Justice",
             "number": "11",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m11.jpg",
             "fortune_telling": [
                 "A legal verdict will be rendered soon",
@@ -551,7 +539,6 @@
             "name": "The Hanged Man",
             "number": "12",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m12.jpg",
             "fortune_telling": [
                 "A traitor is revealed",
@@ -596,7 +583,6 @@
             "name": "Death",
             "number": "13",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m13.jpg",
             "fortune_telling": [
                 "A relationship or illness ends suddenly",
@@ -641,7 +627,6 @@
             "name": "Temperance",
             "number": "14",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m14.jpg",
             "fortune_telling": [
                 "Someone's using drugs or alcohol to excess",
@@ -688,7 +673,6 @@
             "name": "The Devil",
             "number": "15",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m15.jpg",
             "fortune_telling": [
                 "Adultery and unfaithfulness",
@@ -734,7 +718,6 @@
             "name": "The Tower",
             "number": "16",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m16.jpg",
             "fortune_telling": [
                 "Impending disaster",
@@ -781,7 +764,6 @@
             "name": "The Star",
             "number": "17",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m17.jpg",
             "fortune_telling": [
                 "Get an astrology chart drawn up",
@@ -829,7 +811,6 @@
             "name": "The Moon",
             "number": "18",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m18.jpg",
             "fortune_telling": [
                 "Watch for problems at the end of the month",
@@ -874,7 +855,6 @@
             "name": "The Sun",
             "number": "19",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m19.jpg",
             "fortune_telling": [
                 "Everything's coming up roses (or sunflowers, whatever the case may be)",
@@ -918,7 +898,6 @@
             "name": "Judgement",
             "number": "20",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m20.jpg",
             "fortune_telling": [
                 "An old issue you thought was over will come up again today",
@@ -964,7 +943,6 @@
             "name": "The World",
             "number": "21",
             "arcana": "Major Arcana",
-            "suit": "Trump",
             "img": "m21.jpg",
             "fortune_telling": [
                 "Winning the lottery",
