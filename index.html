@@ -18,6 +18,10 @@
         font-family: Arial, sans-serif;
       }
 
+      footer {
+        padding: 48px 0 24px 0;
+      }
+
       .background-image {
         height: 100%;
         background: url("tfz-enso.png") center center no-repeat;
@@ -39,7 +43,7 @@
       .tarot-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        grid-gap: 20px;
+        grid-gap: 12px;
       }
 
       .tarot-card {
@@ -47,6 +51,18 @@
         height: 172px;
         background-size: cover;
         cursor: pointer;
+      }
+
+      .tarot-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card-name {
+        color: white;
+        font-size: 11px; /* Adjust font size as needed */
+        text-align: center;
       }
 
       .modal-content {
@@ -113,9 +129,12 @@
       </div>
 
       <footer>
-        <p>&copy; 2024 The Fool Zero</p>
-        <a href="mailto:fool@thefoolzero.com">fool@thefoolzero.com</a>
+          <p>&copy; <span id="year"></span> The Fool Zero • <a href="mailto:fool@thefoolzero.com" target="_blank">fool@thefoolzero.com</a></p>
       </footer>
+
+      <script>
+          document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -149,11 +168,22 @@
 
       // Function to create and return a card element
       function createCardElement(card) {
-        const cardElement = document.createElement("div");
-        cardElement.classList.add("tarot-card");
-        cardElement.style.backgroundImage = `url('cards/${card.img}')`;
-        cardElement.onclick = () => showCardDetails(card);
-        return cardElement;
+          const cardContainer = document.createElement("div");
+          cardContainer.classList.add("tarot-card-container");
+
+          const cardElement = document.createElement("div");
+          cardElement.classList.add("tarot-card");
+          cardElement.style.backgroundImage = `url('cards/${card.img}')`;
+          cardElement.onclick = () => showCardDetails(card);
+
+          const cardTitle = document.createElement("div");
+          cardTitle.classList.add("card-name");
+          cardTitle.textContent = 'The High Priestess' == card.name ? 'High Priestess' : card.name;
+
+          cardContainer.appendChild(cardElement);
+          cardContainer.appendChild(cardTitle);
+
+          return cardContainer;
       }
 
       // Function to show card details in the modal
