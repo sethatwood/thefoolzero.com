@@ -190,8 +190,17 @@
       function showCardDetails(card) {
         console.log(card);
         tarotModalLabel.textContent = card.name;
-        let modalContent = `
-          <div class="text-center"><img src="cards/${card.img}" alt="${card.name}" class="img-fluid" style="width:175px;height:300px;"></div>
+        let modalContent = '';
+
+        if (card.yt_embed_url) {
+          modalContent += `
+            <div class="embed-responsive embed-responsive-16by9 mt-3" style="width:300px; height:168px; margin:auto;">
+              <iframe class="embed-responsive-item" src="${card.yt_embed_url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>`;
+        }
+
+        modalContent += `
+          <div class="text-center"><img src="cards/${card.img}" alt="${card.name}" class="img-fluid" style="width:175px;height:300px;margin-top:1rem;"></div>
           <p><strong>Number:</strong> ${card.number}</p>
           <p><strong>Arcana:</strong> ${card.arcana}</p>`;
 
@@ -260,6 +269,9 @@
         tarotModal.show();
       }
 
+      $('#tarotModal').on('hidden.bs.modal', function (e) {
+        tarotModalBody.innerHTML = '';
+      });
     </script>
   </body>
 </html>
