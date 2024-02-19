@@ -1,28 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Fool Zero Audio Tarot</title>
-<style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    background-color: black;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Fool Zero Audio Tarot</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+
+      .background-image {
+        height: 100%;
+        background: url("tfz-enso.png") center center no-repeat;
+        background-size: contain;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+      }
+
+      .container {
+        padding-top: 100px;
+      }
+
+      .streaming-service-logo {
+        height: 50px;
+        margin: 0 10px;
+      }
+
+      .tarot-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 15px;
+        padding: 20px;
+      }
+
+      .tarot-card {
+        width: 100px;
+        height: 170px;
+        background-size: cover;
+        cursor: pointer;
+      }
+
+      .modal-content {
+        background-color: black;
+        color: white;
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="background-image"></div>
+
+    <div class="container text-center">
+      <h1 class="font-weight-bold">THE FOOL ZERO AUDIO TAROT</h1>
+      <p>
+        An eclectic blend of polyrhythmic and polymelodic electronica,
+        influenced by south indian carnatic to dub music, encapsulated in a
+        5-album tarot deck.
+      </p>
+      <!-- Streaming service logos -->
+      <div>
+        <!-- Example for one streaming service, repeat for others -->
+        <a href="your-spotify-link" target="_blank">
+          <img
+            class="streaming-service-logo"
+            src="spotify-logo.png"
+            alt="Spotify"
+          />
+        </a>
+        <!-- Add other service logos here -->
+      </div>
+
+      <div id="tarotGrid" class="tarot-grid">
+        <!-- Tarot cards will be added here by JavaScript -->
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="tarotModal"
+        tabindex="-1"
+        aria-labelledby="tarotModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="tarotModalLabel">Card Title</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Tarot card information will go here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>&copy; 2024 The Fool Zero</p>
+        <a href="mailto:fool@thefoolzero.com">fool@thefoolzero.com</a>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // Fetch the JSON data and initialize the grid when the data is loaded
+      fetch("tarot.json")
+        .then((response) => response.json())
+        .then((data) => {
+          initializeTarotGrid(data);
+        })
+        .catch((error) => {
+          console.error("Error fetching tarot data:", error);
+        });
+
+      const tarotGrid = document.getElementById("tarotGrid");
+      const tarotModal = new bootstrap.Modal(
+        document.getElementById("tarotModal")
+      );
+      const tarotModalLabel = document.getElementById("tarotModalLabel");
+      const tarotModalBody = document.querySelector(".modal-body");
+
+      // Function to initialize the tarot grid with data
+      function initializeTarotGrid(tarotData) {
+        tarotData.cards.forEach((card) => {
+          const cardElement = createCardElement(card);
+          tarotGrid.appendChild(cardElement);
+        });
+      }
+
+      // Function to create and return a card element
+      function createCardElement(card) {
+        const cardElement = document.createElement("div");
+        cardElement.classList.add("tarot-card");
+        cardElement.style.backgroundImage = `url('cards/${card.img}')`; // Update with the correct path
+        cardElement.onclick = () => showCardDetails(card);
+        return cardElement;
+      }
+
+      // Function to show card details in the modal
+function showCardDetails(card) {
+  console.log(card);
+  tarotModalLabel.textContent = card.name;
+  let modalContent = `
+    <p><strong>Number:</strong> ${card.number}</p>
+    <p><strong>Arcana:</strong> ${card.arcana}</p>
+    <p><strong>Suit:</strong> ${card.suit}</p>`;
+
+  if (card.fortune_telling) {
+    modalContent += `<p><strong>Fortune Telling:</strong></p><ul>`;
+    card.fortune_telling.forEach(item => {
+      modalContent += `<li>${item}</li>`;
+    });
+    modalContent += `</ul>`;
   }
-  .image-container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('tfz-enso.png') center center no-repeat;
-    background-size: contain;
+
+  if (card.keywords) {
+    modalContent += `<p><strong>Keywords:</strong> ${card.keywords.join(", ")}</p>`;
   }
-</style>
-</head>
-<body>
-<div class="image-container">
-  <!-- The div will cover the whole viewport and the image will be centered and as large as possible without distortion -->
-</div>
-</body>
+
+  if (card.meanings) {
+    modalContent += `<p><strong>Meanings:</strong></p><ul>`;
+    if (card.meanings.light) {
+      modalContent += `<li><strong>Light:</strong> ${card.meanings.light.join('</li><li>')}</li>`;
+    }
+    if (card.meanings.shadow) {
+      modalContent += `<li><strong>Shadow:</strong> ${card.meanings.shadow.join('</li><li>')}</li>`;
+    }
+    modalContent += `</ul>`;
+  }
+
+  if (card.archetype) {
+    modalContent += `<p><strong>Archetype:</strong> ${card.archetype}</p>`;
+  }
+
+  if (card.hebrew_alphabet) {
+    modalContent += `<p><strong>Hebrew Alphabet:</strong> ${card.hebrew_alphabet}</p>`;
+  }
+
+  if (card.numerology) {
+    modalContent += `<p><strong>Numerology:</strong> ${card.numerology}</p>`;
+  }
+
+  if (card.elemental) {
+    modalContent += `<p><strong>Elemental:</strong> ${card.elemental}</p>`;
+  }
+
+  if (card.mythical_spiritual) {
+    modalContent += `<p><strong>Mythical/Spiritual:</strong> ${card.mythical_spiritual}</p>`;
+  }
+
+  if (card.questions) {
+    modalContent += `<p><strong>Questions to Ask:</strong></p><ul>`;
+    card.questions.forEach(question => {
+      modalContent += `<li>${question}</li>`;
+    });
+    modalContent += `</ul>`;
+  }
+
+  tarotModalBody.innerHTML = modalContent;
+  tarotModal.show();
+}
+
+    </script>
+  </body>
 </html>
