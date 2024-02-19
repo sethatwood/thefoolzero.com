@@ -39,8 +39,7 @@
       .tarot-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        grid-gap: 15px;
-        padding: 20px;
+        grid-gap: 20px;
       }
 
       .tarot-card {
@@ -51,9 +50,9 @@
       }
 
       .modal-content {
-        background-color: black;
+        background-color: #111;
         color: white;
-        text-align: left;
+        text-align: left;;
       }
     </style>
   </head>
@@ -93,7 +92,7 @@
         aria-labelledby="tarotModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="tarotModalLabel">Card Title</h5>
@@ -162,6 +161,7 @@ function showCardDetails(card) {
   console.log(card);
   tarotModalLabel.textContent = card.name;
   let modalContent = `
+    <div class="text-center"><img src="cards/${card.img}" alt="${card.name}" class="img-fluid" style="width:175px;height:300px;"></div>
     <p><strong>Number:</strong> ${card.number}</p>
     <p><strong>Arcana:</strong> ${card.arcana}</p>`;
 
@@ -182,14 +182,12 @@ function showCardDetails(card) {
   }
 
   if (card.meanings) {
-    modalContent += `<p><strong>Meanings:</strong></p><ul>`;
     if (card.meanings.light) {
-      modalContent += `<li><strong>Light:</strong> ${card.meanings.light.join('</li><li>')}</li>`;
+      modalContent += `<p><strong>Light Meanings:</strong></p><ul><li>${card.meanings.light.join('</li><li>')}</li></ul>`;
     }
     if (card.meanings.shadow) {
-      modalContent += `<li><strong>Shadow:</strong> ${card.meanings.shadow.join('</li><li>')}</li>`;
+      modalContent += `<p><strong>Shadow Meanings:</strong></p><ul><li>${card.meanings.shadow.join('</li><li>')}</li></ul>`;
     }
-    modalContent += `</ul>`;
   }
 
   if (card.archetype) {
