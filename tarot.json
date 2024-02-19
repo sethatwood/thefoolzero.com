@@ -1438,7 +1438,7 @@
             ]
         },
         {
-            "name": "Page of Bottles",
+            "name": "Fool of Bottles",
             "number": "11",
             "arcana": "Minor Arcana",
             "album": "Bottles (Cups)",
@@ -1480,7 +1480,7 @@
             ]
         },
         {
-            "name": "Knight of Bottles",
+            "name": "Lord of Bottles",
             "number": "12",
             "arcana": "Minor Arcana",
             "album": "Bottles (Cups)",
@@ -1520,7 +1520,7 @@
             ]
         },
         {
-            "name": "Queen of Bottles",
+            "name": "Empress of Bottles",
             "number": "13",
             "arcana": "Minor Arcana",
             "album": "Bottles (Cups)",
@@ -1560,7 +1560,7 @@
             ]
         },
         {
-            "name": "King of Bottles",
+            "name": "Emperor of Bottles",
             "number": "14",
             "arcana": "Minor Arcana",
             "album": "Bottles (Cups)",
@@ -2031,7 +2031,7 @@
             ]
         },
         {
-            "name": "Page of Skulls",
+            "name": "Fool of Skulls",
             "number": "11",
             "arcana": "Minor Arcana",
             "album": "Skulls (Swords)",
@@ -2073,7 +2073,7 @@
             ]
         },
         {
-            "name": "Knight of Skulls",
+            "name": "Lord of Skulls",
             "number": "12",
             "arcana": "Minor Arcana",
             "album": "Skulls (Swords)",
@@ -2120,7 +2120,7 @@
             ]
         },
         {
-            "name": "Queen of Skulls",
+            "name": "Empress of Skulls",
             "number": "13",
             "arcana": "Minor Arcana",
             "album": "Skulls (Swords)",
@@ -2166,7 +2166,7 @@
             ]
         },
         {
-            "name": "King of Skulls",
+            "name": "Emperor of Skulls",
             "number": "14",
             "arcana": "Minor Arcana",
             "album": "Skulls (Swords)",
@@ -2638,7 +2638,7 @@
             ]
         },
         {
-            "name": "Page of Torches",
+            "name": "Fool of Torches",
             "number": "11",
             "arcana": "Minor Arcana",
             "album": "Torches (Wands)",
@@ -2678,7 +2678,7 @@
             ]
         },
         {
-            "name": "Knight of Torches",
+            "name": "Lord of Torches",
             "number": "12",
             "arcana": "Minor Arcana",
             "album": "Torches (Wands)",
@@ -2720,7 +2720,7 @@
             ]
         },
         {
-            "name": "Queen of Torches",
+            "name": "Empress of Torches",
             "number": "13",
             "arcana": "Minor Arcana",
             "album": "Torches (Wands)",
@@ -2758,7 +2758,7 @@
             ]
         },
         {
-            "name": "King of Torches",
+            "name": "Emperor of Torches",
             "number": "14",
             "arcana": "Minor Arcana",
             "album": "Torches (Wands)",
@@ -3227,7 +3227,7 @@
             ]
         },
         {
-            "name": "Page of Hands",
+            "name": "Fool of Hands",
             "number": "11",
             "arcana": "Minor Arcana",
             "album": "Hands (Pentacles)",
@@ -3269,7 +3269,7 @@
             ]
         },
         {
-            "name": "Knight of Hands",
+            "name": "Lord of Hands",
             "number": "12",
             "arcana": "Minor Arcana",
             "album": "Hands (Pentacles)",
@@ -3314,7 +3314,7 @@
             ]
         },
         {
-            "name": "Queen of Hands",
+            "name": "Empress of Hands",
             "number": "13",
             "arcana": "Minor Arcana",
             "album": "Hands (Pentacles)",
@@ -3355,7 +3355,7 @@
             ]
         },
         {
-            "name": "King of Hands",
+            "name": "Emperor of Hands",
             "number": "14",
             "arcana": "Minor Arcana",
             "album": "Hands (Pentacles)",

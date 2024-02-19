@@ -203,18 +203,6 @@
           modalContent += `<p><strong>Keywords:</strong> ${card.keywords.join(", ")}</p>`;
         }
 
-        if (card.fortune_telling) {
-          modalContent += `<p><strong>Fortune Telling:</strong></p><ul>`;
-          card.fortune_telling.forEach(item => {
-            modalContent += `<li>${item}</li>`;
-          });
-          modalContent += `</ul>`;
-        }
-
-        if (card.affirmation) {
-          modalContent += `<p><strong>Affirmation:</strong> ${card.affirmation}</p>`;
-        }
-
         if (card.meanings) {
           if (card.meanings.light) {
             modalContent += `<p><strong>Light Meanings:</strong></p><ul><li>${card.meanings.light.join('</li><li>')}</li></ul>`;
@@ -226,6 +214,18 @@
 
         if (card.archetype) {
           modalContent += `<p><strong>Archetype:</strong> ${card.archetype}</p>`;
+        }
+
+        if (card.affirmation) {
+          modalContent += `<p><strong>Affirmation:</strong> ${card.affirmation}</p>`;
+        }
+
+        if (card.fortune_telling) {
+          modalContent += `<p><strong>Fortune Telling:</strong></p><ul>`;
+          card.fortune_telling.forEach(item => {
+            modalContent += `<li>${item}</li>`;
+          });
+          modalContent += `</ul>`;
         }
 
         if (card.hebrew_alphabet) {
