@@ -163,8 +163,11 @@ function showCardDetails(card) {
   tarotModalLabel.textContent = card.name;
   let modalContent = `
     <p><strong>Number:</strong> ${card.number}</p>
-    <p><strong>Arcana:</strong> ${card.arcana}</p>
-    <p><strong>Suit:</strong> ${card.suit}</p>`;
+    <p><strong>Arcana:</strong> ${card.arcana}</p>`;
+
+  if (card.suit) {
+    modalContent += `<p><strong>Suit:</strong> ${card.suit}</p>`;
+  }
 
   if (card.fortune_telling) {
     modalContent += `<p><strong>Fortune Telling:</strong></p><ul>`;
