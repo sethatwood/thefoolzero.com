@@ -212,12 +212,28 @@
           }
         }
 
+        if (card.questions) {
+          modalContent += `<p><strong>Questions to Ask:</strong></p><ul>`;
+          card.questions.forEach(question => {
+            modalContent += `<li>${question}</li>`;
+          });
+          modalContent += `</ul>`;
+        }
+
         if (card.archetype) {
           modalContent += `<p><strong>Archetype:</strong> ${card.archetype}</p>`;
         }
 
         if (card.affirmation) {
           modalContent += `<p><strong>Affirmation:</strong> ${card.affirmation}</p>`;
+        }
+
+        if (card.elemental) {
+          modalContent += `<p><strong>Elemental:</strong> ${card.elemental}</p>`;
+        }
+
+        if (card.mythical_spiritual) {
+          modalContent += `<p><strong>Mythical/Spiritual:</strong> ${card.mythical_spiritual}</p>`;
         }
 
         if (card.fortune_telling) {
@@ -238,22 +254,6 @@
 
         if (card.astrology) {
           modalContent += `<p><strong>Astrology:</strong> ${card.astrology}</p>`;
-        }
-
-        if (card.elemental) {
-          modalContent += `<p><strong>Elemental:</strong> ${card.elemental}</p>`;
-        }
-
-        if (card.mythical_spiritual) {
-          modalContent += `<p><strong>Mythical/Spiritual:</strong> ${card.mythical_spiritual}</p>`;
-        }
-
-        if (card.questions) {
-          modalContent += `<p><strong>Questions to Ask:</strong></p><ul>`;
-          card.questions.forEach(question => {
-            modalContent += `<li>${question}</li>`;
-          });
-          modalContent += `</ul>`;
         }
 
         tarotModalBody.innerHTML = modalContent;
