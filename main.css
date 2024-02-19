@@ -1,0 +1,61 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+footer {
+  padding: 48px 0 24px 0;
+}
+
+.background-image {
+  height: 100%;
+  background: url("tfz-enso.png") center center no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.container {
+  padding-top: 100px;
+}
+
+.streaming-service-logo {
+  height: 50px;
+  margin: 0 10px;
+}
+
+.tarot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 12px;
+}
+
+.tarot-card {
+  width: 100px;
+  height: 172px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.tarot-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-name {
+  color: white;
+  font-size: 11px; /* Adjust font size as needed */
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #111;
+  color: white;
+  text-align: left;;
+}
