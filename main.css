@@ -25,7 +25,14 @@ footer {
 }
 
 .album-container {
-  margin-bottom: 40px;
+  margin-top: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px dotted grey;
+}
+
+.album-container:first-child {
+  border-top: 1px dotted grey;
+  padding-top: 48px;
 }
 
 .album-cover {
@@ -33,6 +40,8 @@ footer {
   height: 180px; /* This will set the height of the image */
   margin: 0 auto; /* Centers the image horizontally */
   display: block; /* Ensures the image is treated as a block element for centering */
+  border: 1px dotted grey;
+  margin-bottom: 16px;
 }
 
 .album-title {
@@ -53,6 +62,7 @@ footer {
   height: 172px;
   background-size: cover;
   cursor: pointer;
+  border: 1px dotted grey;
 }
 
 .tarot-card-container {
