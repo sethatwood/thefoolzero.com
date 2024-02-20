@@ -1,14 +1,20 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
-fetch("tarot.json")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data.albums, data.cards)
-    buildAlbumSections(data.albums, data.cards);
-  })
-  .catch((error) => {
-    console.error("Error fetching tarot data:", error);
-  });
+let tarotDataGlobal;
+
+function fetchAndStoreTarotData() {
+  fetch("tarot.json")
+    .then((response) => response.json())
+    .then((data) => {
+      tarotDataGlobal = data;
+      buildAlbumSections(data.albums, data.cards);
+    })
+    .catch((error) => {
+      console.error("Error fetching tarot data:", error);
+    });
+}
+
+fetchAndStoreTarotData();
 
 const tarotGrid = document.getElementById("tarotGrid");
 const tarotModal = new bootstrap.Modal(
@@ -168,19 +174,16 @@ function buildAlbumSections(albumData, cardsData) {
   });
 }
 
-function openRandomCardModal(cardsData) {
-  const randomIndex = Math.floor(Math.random() * cardsData.length);
-  const randomCard = cardsData[randomIndex];
-  showCardDetails(randomCard);
+function openRandomCardModal() {
+  if (tarotDataGlobal) {
+    const randomIndex = Math.floor(Math.random() * tarotDataGlobal.cards.length);
+    const randomCard = tarotDataGlobal.cards[randomIndex];
+    showCardDetails(randomCard);
+  } else {
+    console.error('Tarot data not loaded yet');
+  }
 }
 
 document.getElementById('randomCardBtn').addEventListener('click', function() {
-  fetch("tarot.json")
-    .then(response => response.json())
-    .then(data => {
-      openRandomCardModal(data.cards);
-    })
-    .catch(error => {
-      console.error('Error fetching tarot data:', error);
-    });
+  openRandomCardModal();
 });
