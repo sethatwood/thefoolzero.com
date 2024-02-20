@@ -130,3 +130,9 @@ function showCardDetails(card) {
 $('#tarotModal').on('hidden.bs.modal', function (e) {
   tarotModalBody.innerHTML = '';
 });
+
+tarotModalBody.addEventListener('click', function(event) {
+  if (!event.target.closest('iframe')) {
+    tarotModal.hide();
+  }
+});
