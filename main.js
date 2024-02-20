@@ -1,21 +1,4 @@
-document.getElementById('year').textContent = new Date().getFullYear();
-
 let tarotDataGlobal;
-
-function fetchAndStoreTarotData() {
-  fetch("tarot.json")
-    .then((response) => response.json())
-    .then((data) => {
-      tarotDataGlobal = data;
-      buildAlbumSections(data.albums, data.cards);
-    })
-    .catch((error) => {
-      console.error("Error fetching tarot data:", error);
-    });
-}
-
-fetchAndStoreTarotData();
-
 const tarotGrid = document.getElementById("tarotGrid");
 const tarotModal = new bootstrap.Modal(
   document.getElementById("tarotModal")
@@ -23,7 +6,6 @@ const tarotModal = new bootstrap.Modal(
 const tarotModalLabel = document.getElementById("tarotModalLabel");
 const tarotModalBody = document.querySelector(".modal-body");
 
-// Function to create and return a card element
 function createCardElement(card) {
     const cardContainer = document.createElement("div");
     cardContainer.classList.add("tarot-card-container");
@@ -44,7 +26,6 @@ function createCardElement(card) {
 }
 
 function showCardDetails(card) {
-  console.log(card);
   tarotModalLabel.textContent = card.name;
   let modalContent = '';
 
@@ -174,6 +155,18 @@ function buildAlbumSections(albumData, cardsData) {
   });
 }
 
+function fetchAndStoreTarotData() {
+  fetch("tarot.json")
+    .then((response) => response.json())
+    .then((data) => {
+      tarotDataGlobal = data;
+      buildAlbumSections(data.albums, data.cards);
+    })
+    .catch((error) => {
+      console.error("Error fetching tarot data:", error);
+    });
+}
+
 function openRandomCardModal() {
   if (tarotDataGlobal) {
     const randomIndex = Math.floor(Math.random() * tarotDataGlobal.cards.length);
@@ -187,3 +180,5 @@ function openRandomCardModal() {
 document.getElementById('randomCardBtn').addEventListener('click', function() {
   openRandomCardModal();
 });
+
+fetchAndStoreTarotData();
