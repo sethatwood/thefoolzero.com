@@ -6,6 +6,8 @@ const tarotModal = new bootstrap.Modal(
 const tarotModalLabel = document.getElementById("tarotModalLabel");
 const tarotModalBody = document.querySelector(".modal-body");
 
+document.getElementById('year').textContent = new Date().getFullYear();
+
 function createCardElement(card) {
     const cardContainer = document.createElement("div");
     cardContainer.classList.add("tarot-card-container");
