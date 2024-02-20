@@ -167,3 +167,20 @@ function buildAlbumSections(albumData, cardsData) {
     tarotGrid.appendChild(albumContainer);
   });
 }
+
+function openRandomCardModal(cardsData) {
+  const randomIndex = Math.floor(Math.random() * cardsData.length);
+  const randomCard = cardsData[randomIndex];
+  showCardDetails(randomCard);
+}
+
+document.getElementById('randomCardBtn').addEventListener('click', function() {
+  fetch("tarot.json")
+    .then(response => response.json())
+    .then(data => {
+      openRandomCardModal(data.cards);
+    })
+    .catch(error => {
+      console.error('Error fetching tarot data:', error);
+    });
+});

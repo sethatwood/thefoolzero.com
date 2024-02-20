@@ -19,6 +19,11 @@ footer {
   z-index: -1;
 }
 
+.btn.btn-lg.btn-secondary.mt-3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 .streaming-service-logo {
   height: 50px;
   margin: 0 10px;
