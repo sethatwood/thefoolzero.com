@@ -1,10 +1,11 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Fetch the JSON data and initialize the grid when the data is loaded
+// Fetch the JSON data and initialize the new layout with albums and cards
 fetch("tarot.json")
   .then((response) => response.json())
   .then((data) => {
-    initializeTarotGrid(data);
+    console.log(data.albums, data.cards)
+    buildAlbumSections(data.albums, data.cards);
   })
   .catch((error) => {
     console.error("Error fetching tarot data:", error);
@@ -16,14 +17,6 @@ const tarotModal = new bootstrap.Modal(
 );
 const tarotModalLabel = document.getElementById("tarotModalLabel");
 const tarotModalBody = document.querySelector(".modal-body");
-
-// Function to initialize the tarot grid with data
-function initializeTarotGrid(tarotData) {
-  tarotData.cards.forEach((card) => {
-    const cardElement = createCardElement(card);
-    tarotGrid.appendChild(cardElement);
-  });
-}
 
 // Function to create and return a card element
 function createCardElement(card) {
@@ -136,3 +129,43 @@ tarotModalBody.addEventListener('click', function(event) {
     tarotModal.hide();
   }
 });
+
+function buildAlbumSections(albumData, cardsData) {
+  albumData.forEach(album => {
+    // Create the album container
+    const albumContainer = document.createElement('div');
+    albumContainer.classList.add('album-container');
+
+    // Create the album cover image
+    const albumImage = document.createElement('img');
+    albumImage.src = `images/${album.img}`;
+    albumImage.alt = album.title;
+    albumImage.classList.add('album-cover');
+    albumImage.style.width = '180px';
+    albumImage.style.height = '180px';
+    albumContainer.appendChild(albumImage);
+
+    // Create the album title
+    const albumTitle = document.createElement('h2');
+    albumTitle.classList.add('album-title');
+    albumTitle.textContent = album.title;
+    albumContainer.appendChild(albumTitle);
+
+    // Create the cards container
+    const cardsContainer = document.createElement('div');
+    cardsContainer.classList.add('cards-container');
+
+    // Filter cards by album and add to cards container
+    const albumCards = cardsData.filter(card => card.album === album.title);
+    albumCards.forEach(card => {
+      const cardElement = createCardElement(card);
+      cardsContainer.appendChild(cardElement);
+    });
+
+    // Add the cards container to the album container
+    albumContainer.appendChild(cardsContainer);
+
+    // Add the album container to the main grid
+    tarotGrid.appendChild(albumContainer);
+  });
+}

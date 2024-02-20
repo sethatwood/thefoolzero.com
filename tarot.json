@@ -1,5 +1,27 @@
 {
     "description": "tarot cards and basic information about them, as well as references to corresponding scans",
+    "albums": [
+        {
+            "title": "Fool For You",
+            "img": "fool-for-you.jpg"
+        },
+        {
+            "title": "Hands (Pentacles)",
+            "img": "hands.jpg"
+        },
+        {
+            "title": "Skulls (Swords)",
+            "img": "skulls.jpg"
+        },
+        {
+            "title": "Torches (Wands)",
+            "img": "torches.jpg"
+        },
+        {
+            "title": "Bottles (Cups)",
+            "img": "bottles.jpg"
+        }
+    ],
     "cards": [
         {
             "name": "The Fool",
