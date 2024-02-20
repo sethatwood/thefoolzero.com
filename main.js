@@ -1,6 +1,5 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Fetch the JSON data and initialize the new layout with albums and cards
 fetch("tarot.json")
   .then((response) => response.json())
   .then((data) => {
@@ -37,7 +36,7 @@ function createCardElement(card) {
 
     return cardContainer;
 }
-// Function to show card details in the modal
+
 function showCardDetails(card) {
   console.log(card);
   tarotModalLabel.textContent = card.name;
@@ -52,8 +51,7 @@ function showCardDetails(card) {
 
   modalContent += `
     <div class="text-center"><img src="cards/${card.img}" alt="${card.name}" class="img-fluid" style="width:175px;height:300px;margin-top:1rem;"></div>
-    <p><strong>Number:</strong> ${card.number}</p>
-    <p><strong>Arcana:</strong> ${card.arcana}</p>`;
+    <p><strong>Card:</strong> ${card.name}</p>`;
 
   if (card.album) {
     modalContent += `<p><strong>Album:</strong> ${card.album}</p>`;
@@ -88,10 +86,6 @@ function showCardDetails(card) {
     modalContent += `<p><strong>Affirmation:</strong> ${card.affirmation}</p>`;
   }
 
-  if (card.elemental) {
-    modalContent += `<p><strong>Elemental:</strong> ${card.elemental}</p>`;
-  }
-
   if (card.mythical_spiritual) {
     modalContent += `<p><strong>Mythical/Spiritual:</strong> ${card.mythical_spiritual}</p>`;
   }
@@ -102,6 +96,10 @@ function showCardDetails(card) {
       modalContent += `<li>${item}</li>`;
     });
     modalContent += `</ul>`;
+  }
+
+  if (card.elemental) {
+    modalContent += `<p><strong>Elemental:</strong> ${card.elemental}</p>`;
   }
 
   if (card.hebrew_alphabet) {

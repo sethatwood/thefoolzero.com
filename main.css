@@ -12,7 +12,7 @@ footer {
 
 .background-image {
   height: 100%;
-  background: url("tfz-enso.png") center center no-repeat;
+  background: url('tfz-enso.png') center center no-repeat;
   background-size: contain;
   position: absolute;
   width: 100%;
@@ -36,17 +36,17 @@ footer {
 }
 
 .album-cover {
-  width: 180px; /* This will set the width of the image */
-  height: 180px; /* This will set the height of the image */
-  margin: 0 auto; /* Centers the image horizontally */
-  display: block; /* Ensures the image is treated as a block element for centering */
+  width: 180px; 
+  height: 180px;
+  margin: 0 auto;
+  display: block;
   border: 1px dotted grey;
   margin-bottom: 16px;
 }
 
 .album-title {
   text-align: center;
-  font-size: 24px; /* Adjust as needed */
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
@@ -73,7 +73,7 @@ footer {
 
 .card-name {
   color: white;
-  font-size: 11px; /* Adjust font size as needed */
+  font-size: 11px;
   text-align: center;
 }
 
