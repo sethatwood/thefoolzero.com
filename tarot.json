@@ -2,7 +2,7 @@
     "description": "tarot cards and basic information about them, as well as references to corresponding scans",
     "albums": [
         {
-            "title": "Fool For You",
+            "title": "Fool For You (Major Arcana)",
             "img": "fool-for-you.jpg"
         },
         {
@@ -27,7 +27,7 @@
             "name": "The Fool",
             "number": "0",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/gH3TSUKm3JE",
             "img": "m00.jpg",
             "fortune_telling": [
@@ -77,7 +77,7 @@
             "name": "The Magician",
             "number": "1",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/akRFoMsH3ig",
             "img": "m01.jpg",
             "fortune_telling": [
@@ -122,7 +122,7 @@
             "name": "The High Priestess",
             "number": "2",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/XvEeDUt85dg",
             "img": "m02.jpg",
             "fortune_telling": [
@@ -170,7 +170,7 @@
             "name": "The Empress",
             "number": "3",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/W7RXU5-TVqg",
             "img": "m03.jpg",
             "fortune_telling": [
@@ -219,7 +219,7 @@
             "name": "The Emperor",
             "number": "4",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/_5xur71hObg",
             "img": "m04.jpg",
             "fortune_telling": [
@@ -265,7 +265,7 @@
             "name": "The Hierophant",
             "number": "5",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/n6qVbqESCY4",
             "img": "m05.jpg",
             "fortune_telling": [
@@ -313,7 +313,7 @@
             "name": "The Lovers",
             "number": "6",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/-aXvK4nVGjw",
             "img": "m06.jpg",
             "fortune_telling": [
@@ -359,7 +359,7 @@
             "name": "The Chariot",
             "number": "7",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/fNZ3dFK93bI",
             "img": "m07.jpg",
             "fortune_telling": [
@@ -404,7 +404,7 @@
             "name": "Strength",
             "number": "8",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/Mw39APdfXb0",
             "img": "m08.jpg",
             "fortune_telling": [
@@ -448,7 +448,7 @@
             "name": "The Hermit",
             "number": "9",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/FmTWtg-iAV8",
             "img": "m09.jpg",
             "fortune_telling": [
@@ -493,7 +493,7 @@
             "name": "Wheel of Fortune",
             "number": "10",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/uJoMg6Q7fyo",
             "img": "m10.jpg",
             "fortune_telling": [
@@ -539,7 +539,7 @@
             "name": "Justice",
             "number": "11",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/xBB1Uc4O0m8",
             "img": "m11.jpg",
             "fortune_telling": [
@@ -585,7 +585,7 @@
             "name": "The Hanged Man",
             "number": "12",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/C82_quvxQSM",
             "img": "m12.jpg",
             "fortune_telling": [
@@ -631,7 +631,7 @@
             "name": "Death",
             "number": "13",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/g9r0TdxzKGc",
             "img": "m13.jpg",
             "fortune_telling": [
@@ -677,7 +677,7 @@
             "name": "Temperance",
             "number": "14",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/5R7ghFyq8eo",
             "img": "m14.jpg",
             "fortune_telling": [
@@ -725,7 +725,7 @@
             "name": "The Devil",
             "number": "15",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/icnubiAvSxw",
             "img": "m15.jpg",
             "fortune_telling": [
@@ -772,7 +772,7 @@
             "name": "The Tower",
             "number": "16",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/j8fwBl22GzA",
             "img": "m16.jpg",
             "fortune_telling": [
@@ -820,7 +820,7 @@
             "name": "The Star",
             "number": "17",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/w5K3_TaLhMM",
             "img": "m17.jpg",
             "fortune_telling": [
@@ -869,7 +869,7 @@
             "name": "The Moon",
             "number": "18",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/qfZ2YUMmUAw",
             "img": "m18.jpg",
             "fortune_telling": [
@@ -915,7 +915,7 @@
             "name": "The Sun",
             "number": "19",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/jWx06_9jfZI",
             "img": "m19.jpg",
             "fortune_telling": [
@@ -960,7 +960,7 @@
             "name": "Judgement",
             "number": "20",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/PyCzoOkgR0Q",
             "img": "m20.jpg",
             "fortune_telling": [
@@ -1007,7 +1007,7 @@
             "name": "The World",
             "number": "21",
             "arcana": "Major Arcana",
-            "album": "Fool For You",
+            "album": "Fool For You (Major Arcana)",
             "yt_embed_url": "https://www.youtube-nocookie.com/embed/aJCdroDNCE4",
             "img": "m21.jpg",
             "fortune_telling": [

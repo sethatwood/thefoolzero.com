@@ -19,6 +19,10 @@ footer {
   z-index: -1;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .btn.btn-lg.btn-secondary.mt-3 {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -47,6 +51,7 @@ footer {
   display: block;
   border: 1px dotted grey;
   margin-bottom: 16px;
+  cursor: pointer;
 }
 
 .album-title {
