@@ -97,6 +97,10 @@ footer {
   text-align: left;;
 }
 
+.modal-body p:first-of-type {
+  margin-top: 24px;
+}
+
 .top-image {
   width: 240px;
   height: 240px;
