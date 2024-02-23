@@ -29,19 +29,19 @@ footer {
   margin: 0 10px;
 }
 
-.album-container {
+.album-section {
   margin-top: 48px;
   padding-bottom: 48px;
   border-bottom: 1px dotted grey;
 }
 
-.album-container:first-child {
+.album-section:first-child {
   border-top: 1px dotted grey;
   padding-top: 48px;
 }
 
 .album-cover {
-  width: 180px; 
+  width: 180px;
   height: 180px;
   margin: 0 auto;
   display: block;
@@ -98,4 +98,9 @@ footer {
   object-fit: cover;
   margin: 0 auto;
   display: block;
+}
+
+.modal-body img {
+  width: 100%;
+  height: auto;
 }

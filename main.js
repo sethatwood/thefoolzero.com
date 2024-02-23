@@ -107,6 +107,16 @@ function showCardDetails(card) {
   tarotModal.show();
 }
 
+function showAlbumDetails(album) {
+  tarotModalLabel.textContent = album.title;
+  const modalContent = `
+    <div class="text-center">
+      <img src="images/${album.img}" alt="${album.title} cover" class="img-fluid">
+    </div>`;
+  tarotModalBody.innerHTML = modalContent;
+  tarotModal.show();
+}
+
 $('#tarotModal').on('hidden.bs.modal', function (e) {
   tarotModalBody.innerHTML = '';
 });
@@ -119,42 +129,51 @@ tarotModalBody.addEventListener('click', function(event) {
 
 function buildAlbumSections(albumData, cardsData) {
   albumData.forEach(album => {
-    // Create the album container
-    const albumContainer = document.createElement('div');
-    albumContainer.classList.add('album-container');
+    // Create the album section which includes the album and its cards
+    const albumSection = document.createElement('section');
+    albumSection.classList.add('album-section');
 
-    // Create the album cover image
-    const albumImage = document.createElement('img');
-    albumImage.src = `images/${album.img}`;
-    albumImage.alt = album.title;
-    albumImage.classList.add('album-cover');
-    albumImage.style.width = '180px';
-    albumImage.style.height = '180px';
-    albumContainer.appendChild(albumImage);
+    // Create the album container which will only have the album image and title
+    const albumContainer = createAlbumElement(album);
+    albumSection.appendChild(albumContainer);
 
-    // Create the album title
-    const albumTitle = document.createElement('h2');
-    albumTitle.classList.add('album-title');
-    albumTitle.textContent = album.title;
-    albumContainer.appendChild(albumTitle);
-
-    // Create the cards container
+    // Create the cards container for this album
     const cardsContainer = document.createElement('div');
     cardsContainer.classList.add('cards-container');
 
-    // Filter cards by album and add to cards container
+    // Filter and append cards for the current album
     const albumCards = cardsData.filter(card => card.album === album.title);
     albumCards.forEach(card => {
       const cardElement = createCardElement(card);
       cardsContainer.appendChild(cardElement);
     });
 
-    // Add the cards container to the album container
-    albumContainer.appendChild(cardsContainer);
+    // Append the cards container to the album section
+    albumSection.appendChild(cardsContainer);
 
-    // Add the album container to the main grid
-    tarotGrid.appendChild(albumContainer);
+    // Append the complete album section to the main grid
+    tarotGrid.appendChild(albumSection);
   });
+}
+
+function createAlbumElement(album) {
+  const albumContainer = document.createElement('div');
+  albumContainer.classList.add('album-container');
+
+  const albumImage = document.createElement('img');
+  albumImage.src = `images/${album.img}`;
+  albumImage.alt = `${album.title} cover`;
+  albumImage.classList.add('album-cover');
+  albumImage.onclick = () => showAlbumDetails(album);
+
+  const albumTitle = document.createElement('h2');
+  albumTitle.classList.add('album-title');
+  albumTitle.textContent = album.title;
+
+  albumContainer.appendChild(albumImage);
+  albumContainer.appendChild(albumTitle);
+
+  return albumContainer;
 }
 
 function fetchAndStoreTarotData() {
