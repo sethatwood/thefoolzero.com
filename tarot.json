@@ -3,23 +3,43 @@
     "albums": [
         {
             "title": "Fool For You (Major Arcana)",
-            "img": "fool-for-you.jpg"
+            "img": "fool-for-you.jpg",
+            "spotify": "",
+            "youtube": "",
+            "apple": "",
+            "soundcloud": ""
         },
         {
             "title": "Hands (Pentacles)",
-            "img": "hands.jpg"
+            "img": "hands.jpg",
+            "spotify": "",
+            "youtube": "",
+            "apple": "",
+            "soundcloud": ""
         },
         {
             "title": "Skulls (Swords)",
-            "img": "skulls.jpg"
+            "img": "skulls.jpg",
+            "spotify": "",
+            "youtube": "",
+            "apple": "",
+            "soundcloud": ""
         },
         {
             "title": "Torches (Wands)",
-            "img": "torches.jpg"
+            "img": "torches.jpg",
+            "spotify": "",
+            "youtube": "",
+            "apple": "",
+            "soundcloud": ""
         },
         {
             "title": "Bottles (Cups)",
-            "img": "bottles.jpg"
+            "img": "bottles.jpg",
+            "spotify": "",
+            "youtube": "",
+            "apple": "",
+            "soundcloud": ""
         }
     ],
     "cards": [

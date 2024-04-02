@@ -109,10 +109,44 @@ function showCardDetails(card) {
 
 function showAlbumDetails(album) {
   tarotModalLabel.textContent = album.title;
-  const modalContent = `
+  let modalContent = `
     <div class="text-center">
       <img src="images/${album.img}" alt="${album.title} cover" class="img-fluid">
-    </div>`;
+      <div class="badge-links" style="margin-top: 20px;">`;
+
+  // Adding Spotify badge
+  if (album.spotify) {
+    modalContent += `
+      <a href="${album.spotify}" target="_blank">
+        <img src="images/badge-spot.png" alt="Spotify" style="width: 60px; height: 60px; margin-right: 10px;">
+      </a>`;
+  }
+
+  // Adding YouTube badge
+  if (album.youtube) {
+    modalContent += `
+      <a href="${album.youtube}" target="_blank">
+        <img src="images/badge-yt.png" alt="YouTube" style="width: 60px; height: 60px; margin-right: 10px;">
+      </a>`;
+  }
+
+  // Adding Apple Music badge
+  if (album.apple) {
+    modalContent += `
+      <a href="${album.apple}" target="_blank">
+        <img src="images/badge-apl.png" alt="Apple Music" style="width: 60px; height: 60px; margin-right: 10px;">
+      </a>`;
+  }
+
+  // Adding SoundCloud badge
+  if (album.soundcloud) {
+    modalContent += `
+      <a href="${album.soundcloud}" target="_blank">
+        <img src="images/badge-sc.png" alt="SoundCloud" style="width: 60px; height: 60px; margin-right: 10px;">
+      </a>`;
+  }
+
+  modalContent += `</div></div>`;
   tarotModalBody.innerHTML = modalContent;
   tarotModal.show();
 }
