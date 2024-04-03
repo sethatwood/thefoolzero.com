@@ -204,8 +204,39 @@ function createAlbumElement(album) {
   albumTitle.classList.add('album-title');
   albumTitle.textContent = album.title;
 
+  // Create a div for badges
+  const badgesDiv = document.createElement('div');
+  badgesDiv.style.display = 'flex';
+  badgesDiv.style.justifyContent = 'center';
+  badgesDiv.style.paddingBottom = '24px';
+
+  // Conditionally add each badge if the URL exists
+  const badges = [
+    {name: 'spotify', img: 'badge-spot.png', url: album.spotify},
+    {name: 'youtube', img: 'badge-yt.png', url: album.youtube},
+    {name: 'apple', img: 'badge-apl.png', url: album.apple},
+    {name: 'soundcloud', img: 'badge-sc.png', url: album.soundcloud}
+  ];
+
+  badges.forEach(badge => {
+    if (badge.url) {
+      const link = document.createElement('a');
+      link.href = badge.url;
+      link.target = '_blank';
+      const img = document.createElement('img');
+      img.src = `images/${badge.img}`;
+      img.alt = badge.name;
+      img.style.width = '48px';
+      img.style.height = '48px';
+      img.style.margin = '0 12px';
+      link.appendChild(img);
+      badgesDiv.appendChild(link);
+    }
+  });
+
   albumContainer.appendChild(albumImage);
   albumContainer.appendChild(albumTitle);
+  albumContainer.appendChild(badgesDiv);
 
   return albumContainer;
 }
