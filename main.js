@@ -27,6 +27,14 @@ function createCardElement(card) {
     return cardContainer;
 }
 
+function createBadgeHTML(url, imgSrc, altText) {
+  if (!url) return '';
+  return `
+    <a href="${url}" target="_blank">
+      <img src="images/${imgSrc}" alt="${altText}" style="width: 36px; height: 36px; margin-left: 10px;">
+    </a>`;
+}
+
 function showCardDetails(card) {
   tarotModalLabel.textContent = card.name;
   let modalContent = '';
@@ -43,7 +51,17 @@ function showCardDetails(card) {
     <p><strong>Card:</strong> ${card.name}</p>`;
 
   if (card.album) {
-    modalContent += `<p><strong>Album:</strong> ${card.album}</p>`;
+    const album = tarotDataGlobal.albums.find(a => a.title === card.album);
+    if (album) {
+      modalContent += `<p><strong>Album:</strong> ${card.album}`;
+      modalContent += createBadgeHTML(album.spotify, 'badge-spot.png', 'Spotify');
+      modalContent += createBadgeHTML(album.youtube, 'badge-yt.png', 'YouTube');
+      modalContent += createBadgeHTML(album.apple, 'badge-apl.png', 'Apple Music');
+      modalContent += createBadgeHTML(album.soundcloud, 'badge-sc.png', 'SoundCloud');
+      modalContent += `</p>`;
+    } else {
+      modalContent += `<p><strong>Album:</strong> ${card.album}</p>`;
+    }
   }
 
   if (card.keywords) {
