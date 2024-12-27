@@ -185,6 +185,13 @@ function buildAlbumSections(albumData, cardsData) {
     const albumSection = document.createElement('section');
     albumSection.classList.add('album-section');
 
+    // Add an ID based on the album title (convert to lowercase, replace spaces/special chars with dashes)
+    const albumId = album.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-') // Replace any non-alphanumeric chars with dash
+      .replace(/(^-|-$)/g, ''); // Remove leading/trailing dashes
+    albumSection.id = albumId;
+
     // Create the album container which will only have the album image and title
     const albumContainer = createAlbumElement(album);
     albumSection.appendChild(albumContainer);
