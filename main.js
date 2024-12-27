@@ -8,6 +8,21 @@ const tarotModalBody = document.querySelector(".modal-body");
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+function scrollToHashSection() {
+  // Get the hash without the # symbol
+  const hash = window.location.hash.slice(1);
+  if (hash) {
+    // Find the element with matching ID
+    const element = document.getElementById(hash);
+    if (element) {
+      // Wait a brief moment for content to load
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }
+}
+
 function createCardElement(card) {
     const cardContainer = document.createElement("div");
     cardContainer.classList.add("tarot-card-container");
@@ -272,6 +287,7 @@ function fetchAndStoreTarotData() {
     .then((data) => {
       tarotDataGlobal = data;
       buildAlbumSections(data.albums, data.cards);
+      scrollToHashSection();
     })
     .catch((error) => {
       console.error("Error fetching tarot data:", error);
@@ -293,3 +309,6 @@ document.getElementById('randomCardBtn').addEventListener('click', function() {
 });
 
 fetchAndStoreTarotData();
+
+// Add event listener for hash changes
+window.addEventListener('hashchange', scrollToHashSection);
