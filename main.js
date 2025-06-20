@@ -60,24 +60,10 @@ function showCardDetails(card) {
   let modalContent = '';
 
   if (card.yt_embed_url) {
-    // Use YouTube thumbnail and load iframe on click to improve performance
-    const videoId = card.yt_embed_url.match(/embed\/([^?]+)/)?.[1];
-    if (videoId) {
-      modalContent += `
-        <div class="embed-responsive embed-responsive-16by9 mt-3" style="width:300px; height:168px; margin:auto; position: relative;">
-          <div class="youtube-placeholder" data-video-id="${videoId}" style="width:100%; height:100%; background-image:url('https://img.youtube.com/vi/${videoId}/maxresdefault.jpg'); background-size:cover; background-position:center; cursor:pointer; display:flex; align-items:center; justify-content:center; border-radius: 4px;">
-            <div style="width:60px; height:60px; background:rgba(0,0,0,0.8); border-radius:50%; display:flex; align-items:center; justify-content:center;">
-              <div style="width:0; height:0; border-left:20px solid white; border-top:10px solid transparent; border-bottom:10px solid transparent; margin-left:5px;"></div>
-            </div>
-          </div>
-        </div>`;
-    } else {
-      // Fallback to direct embed if we can't extract video ID
-      modalContent += `
-        <div class="embed-responsive embed-responsive-16by9 mt-3" style="width:300px; height:168px; margin:auto;">
-          <iframe class="embed-responsive-item" src="${card.yt_embed_url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>`;
-    }
+    modalContent += `
+      <div class="embed-responsive embed-responsive-16by9 mt-3" style="width:300px; height:168px; margin:auto;">
+        <iframe class="embed-responsive-item" src="${card.yt_embed_url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>`;
   }
 
   modalContent += `
@@ -210,23 +196,11 @@ if (tarotModal && tarotModalBody) {
     tarotModalBody.innerHTML = '';
   });
 
-  tarotModalBody.addEventListener('click', function(event) {
-    // Handle YouTube placeholder clicks
-    const placeholder = event.target.closest('.youtube-placeholder');
-    if (placeholder) {
-      const videoId = placeholder.dataset.videoId;
-      const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-      placeholder.outerHTML = `
-        <iframe class="embed-responsive-item" src="${embedUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      `;
-      return;
-    }
-
-    // Close modal if clicking outside iframe
+    tarotModalBody.addEventListener('click', function(event) {
     if (!event.target.closest('iframe')) {
       tarotModal.hide();
     }
-  }, { passive: false }); // Can't be passive since we need to modify DOM
+  }, { passive: true });
 }
 
 function buildAlbumSections(albumData, cardsData) {
