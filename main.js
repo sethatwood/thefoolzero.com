@@ -1,10 +1,14 @@
 let tarotDataGlobal;
 const tarotGrid = document.getElementById("tarotGrid");
-const tarotModal = new bootstrap.Modal(
-  document.getElementById("tarotModal")
-);
-const tarotModalLabel = document.getElementById("tarotModalLabel");
-const tarotModalBody = document.querySelector(".modal-body");
+
+// Only initialize modal components if they exist on the page
+let tarotModal, tarotModalLabel, tarotModalBody;
+const tarotModalElement = document.getElementById("tarotModal");
+if (tarotModalElement) {
+  tarotModal = new bootstrap.Modal(tarotModalElement);
+  tarotModalLabel = document.getElementById("tarotModalLabel");
+  tarotModalBody = document.querySelector(".modal-body");
+}
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -51,6 +55,7 @@ function createBadgeHTML(url, imgSrc, altText) {
 }
 
 function showCardDetails(card) {
+  if (!tarotModal || !tarotModalLabel || !tarotModalBody) return;
   tarotModalLabel.textContent = card.name;
   let modalContent = '';
 
@@ -141,6 +146,7 @@ function showCardDetails(card) {
 }
 
 function showAlbumDetails(album) {
+  if (!tarotModal || !tarotModalLabel || !tarotModalBody) return;
   tarotModalLabel.textContent = album.title;
   let modalContent = `
     <div class="text-center">
@@ -184,17 +190,21 @@ function showAlbumDetails(album) {
   tarotModal.show();
 }
 
-$('#tarotModal').on('hidden.bs.modal', function (e) {
-  tarotModalBody.innerHTML = '';
-});
+// Only add modal event listeners if modal exists
+if (tarotModal && tarotModalBody) {
+  $('#tarotModal').on('hidden.bs.modal', function (e) {
+    tarotModalBody.innerHTML = '';
+  });
 
-tarotModalBody.addEventListener('click', function(event) {
-  if (!event.target.closest('iframe')) {
-    tarotModal.hide();
-  }
-});
+  tarotModalBody.addEventListener('click', function(event) {
+    if (!event.target.closest('iframe')) {
+      tarotModal.hide();
+    }
+  });
+}
 
 function buildAlbumSections(albumData, cardsData) {
+  if (!tarotGrid) return;
   albumData.forEach(album => {
     // Create the album section which includes the album and its cards
     const albumSection = document.createElement('section');
@@ -282,6 +292,9 @@ function createAlbumElement(album) {
 }
 
 function fetchAndStoreTarotData() {
+  // Only fetch tarot data if we have a tarot grid to display it in
+  if (!tarotGrid) return;
+
   fetch("tarot.json")
     .then((response) => response.json())
     .then((data) => {
@@ -304,9 +317,13 @@ function openRandomCardModal() {
   }
 }
 
-document.getElementById('randomCardBtn').addEventListener('click', function() {
-  openRandomCardModal();
-});
+// Only add random card button listener if the button exists
+const randomCardBtn = document.getElementById('randomCardBtn');
+if (randomCardBtn) {
+  randomCardBtn.addEventListener('click', function() {
+    openRandomCardModal();
+  });
+}
 
 fetchAndStoreTarotData();
 
