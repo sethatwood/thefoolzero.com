@@ -36,7 +36,7 @@
 
       <!-- Album Cover -->
       <div class="mt-4 mb-4">
-        <img src="../images/what-now.jpg" alt="What Now Album Cover" class="img-fluid" style="max-width: 400px; width: 100%; height: auto; border: 1px dotted grey;">
+        <img src="../images/what-now.jpg" alt="What Now Album Cover" class="img-fluid" style="max-width: 400px; width: 100%; height: auto; border: 1px dotted grey; cursor: zoom-in;" onclick="showFullSizeImage()">
       </div>
 
       <!-- Streaming Service Badges -->
@@ -73,9 +73,42 @@
       </footer>
     </div>
 
+    <!-- Full Size Image Modal -->
+    <div class="modal fade" id="fullSizeImageModal" tabindex="-1" aria-labelledby="fullSizeImageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="background-color: transparent; border: none;">
+          <div class="modal-header" style="border: none; padding: 10px;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white; font-size: 2rem; opacity: 0.8;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center" style="padding: 0;">
+            <img src="../images/what-now.jpg" alt="What Now Album Cover - Full Size" class="img-fluid" style="max-height: 80vh; cursor: zoom-out;" onclick="hideFullSizeImage()">
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../main.js"></script>
+
+    <script>
+      function showFullSizeImage() {
+        $('#fullSizeImageModal').modal('show');
+      }
+
+      function hideFullSizeImage() {
+        $('#fullSizeImageModal').modal('hide');
+      }
+
+      // Also allow clicking outside the image to close
+      $('#fullSizeImageModal').on('click', function(e) {
+        if (e.target === this) {
+          $('#fullSizeImageModal').modal('hide');
+        }
+      });
+    </script>
   </body>
 </html>
