@@ -97,22 +97,25 @@
 
     <!-- New Album Announcement Modal -->
     <div class="modal fade" id="newAlbumModal" tabindex="-1" aria-labelledby="newAlbumModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title font-weight-bold" id="newAlbumModalLabel">NEW ALBUM AVAILABLE</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <div class="modal-header" style="border-bottom: 1px dotted grey;">
+            <h4 class="modal-title font-weight-bold" id="newAlbumModalLabel" style="font-size: 1.8rem;">🎵 NEW ALBUM AVAILABLE 🎵</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 1.8rem;">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body text-center">
-            <img src="images/what-now.jpg" alt="What Now Album Cover" style="width: 200px; height: 200px; object-fit: cover; margin: 16px auto; display: block; border: 1px dotted grey;">
-            <h4 class="font-weight-bold">WHAT NOW</h4>
-            <p style="font-size: 16px; color: #ccc; margin-bottom: 20px;">
+          <div class="modal-body text-center" style="padding: 40px;">
+            <img src="images/what-now.jpg" alt="What Now Album Cover" style="width: 300px; height: 300px; object-fit: cover; margin: 20px auto; display: block; border: 1px dotted grey; box-shadow: 0 8px 16px rgba(255,255,255,0.1);">
+            <h2 class="font-weight-bold" style="font-size: 2.5rem; margin: 30px 0 20px 0;">WHAT NOW</h2>
+            <p style="font-size: 18px; color: #ccc; margin-bottom: 30px; line-height: 1.6;">
               Our first full-length album since the Audio Tarot.<br>
-              A journey through sound and emotion, exploring what comes next.
+              <em>A journey through sound and emotion, exploring what comes next.</em>
             </p>
-            <a href="/what-now" class="btn btn-lg btn-secondary">Listen Now ✋💀🔥🍾</a>
+            <a href="/what-now" class="btn btn-secondary" style="font-size: 1.4rem; padding: 15px 40px; margin: 20px 0;">Listen Now ✋💀🔥🍾</a>
+            <p style="font-size: 14px; color: #999; margin-top: 20px;">
+              Available on all streaming platforms
+            </p>
           </div>
         </div>
       </div>
