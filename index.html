@@ -26,16 +26,6 @@
 
     <body>
     <div class="container text-center">
-      <div class="mt-4 mb-5" style="border: 1px dotted grey; padding: 24px; margin: 24px 0;">
-        <h3 class="font-weight-bold">NEW ALBUM</h3>
-        <a href="/what-now" class="text-decoration-none" style="color: inherit;">
-          <img src="images/what-now.jpg" alt="What Now Album Cover" style="width: 150px; height: 150px; object-fit: cover; margin: 16px auto; display: block; border: 1px dotted grey; cursor: pointer;">
-          <h4 style="margin-bottom: 8px;">WHAT NOW</h4>
-          <p style="font-size: 16px; color: #ccc;">Our first full-length album since the Audio Tarot</p>
-          <p style="font-size: 14px; color: #999;">Click to listen →</p>
-        </a>
-      </div>
-
       <img src="tfz-enso.png" alt="The Fool Zero Enso" class="top-image">
 
       <h1 class="font-weight-bold">THE&nbsp;FOOL&nbsp;ZERO <span class="nowrap">✋💀🔥🍾</span> AUDIO&nbsp;TAROT</h1>
@@ -90,14 +80,54 @@
         </div>
       </div>
 
+      <!-- Persistent New Album Link -->
+      <div class="mt-5 mb-4">
+        <p>
+          <a href="/what-now" class="btn btn-lg btn-secondary">Listen to What Now ✋💀🔥🍾</a>
+        </p>
+        <p style="font-size: 14px; color: #ccc;">
+          Our first full-length album since the Audio Tarot
+        </p>
+      </div>
+
       <footer>
           <p>&copy; <span id="year"></span> The Fool Zero • <a href="mailto:fool@thefoolzero.com" target="_blank">fool@thefoolzero.com</a></p>
       </footer>
+    </div>
+
+    <!-- New Album Announcement Modal -->
+    <div class="modal fade" id="newAlbumModal" tabindex="-1" aria-labelledby="newAlbumModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title font-weight-bold" id="newAlbumModalLabel">NEW ALBUM AVAILABLE</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="images/what-now.jpg" alt="What Now Album Cover" style="width: 200px; height: 200px; object-fit: cover; margin: 16px auto; display: block; border: 1px dotted grey;">
+            <h4 class="font-weight-bold">WHAT NOW</h4>
+            <p style="font-size: 16px; color: #ccc; margin-bottom: 20px;">
+              Our first full-length album since the Audio Tarot.<br>
+              A journey through sound and emotion, exploring what comes next.
+            </p>
+            <a href="/what-now" class="btn btn-lg btn-secondary">Listen Now ✋💀🔥🍾</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
+
+    <script>
+      // Show new album modal on page load
+      $(document).ready(function() {
+        $('#newAlbumModal').modal('show');
+      });
+    </script>
   </body>
 </html>
