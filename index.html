@@ -105,17 +105,33 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body text-center" style="padding: 40px; cursor: pointer;" onclick="window.location.href='/what-now'">
-            <img src="images/what-now.jpg" alt="What Now Album Cover" style="width: 300px; height: 300px; object-fit: cover; margin: 20px auto; display: block; border: 1px dotted grey; box-shadow: 0 8px 16px rgba(255,255,255,0.1);">
-            <h2 class="font-weight-bold" style="font-size: 2.5rem; margin: 30px 0 20px 0;">WHAT NOW</h2>
-            <p style="font-size: 18px; color: #ccc; margin-bottom: 30px; line-height: 1.6;">
-              Our first full-length album since the Audio Tarot.<br>
-              <em>A journey through sound and emotion, exploring what comes next.</em>
-            </p>
-            <div class="btn btn-secondary" style="font-size: 1.4rem; padding: 15px 40px; margin: 20px 0; pointer-events: none;">Listen Now ✋💀🔥🍾</div>
-            <p style="font-size: 14px; color: #999; margin-top: 20px;">
-              Available on all streaming platforms
-            </p>
+                     <div class="modal-body text-center" style="padding: 40px;">
+             <img src="images/what-now.jpg" alt="What Now Album Cover" style="width: 300px; height: 300px; object-fit: cover; margin: 20px auto; display: block; border: 1px dotted grey; box-shadow: 0 8px 16px rgba(255,255,255,0.1); cursor: pointer;" onclick="window.location.href='/what-now'">
+
+             <!-- Streaming Service Badges -->
+             <div class="mt-3 mb-4">
+               <div class="d-flex justify-content-center flex-wrap" style="gap: 15px;">
+                 <a href="https://open.spotify.com/album/7HSRsE1hkD9CUqrxMRpGV5?si=-sjAT12USeGIZ2614mDgDA" target="_blank" onclick="event.stopPropagation();">
+                   <img src="images/badge-spot.png" alt="Spotify" style="width: 60px; height: 60px;">
+                 </a>
+                 <a href="https://music.youtube.com/playlist?list=OLAK5uy_k7G3HTcJ2E8YIOrQNQbpFDBjgG4KZRwNQ" target="_blank" onclick="event.stopPropagation();">
+                   <img src="images/badge-yt.png" alt="YouTube Music" style="width: 60px; height: 60px;">
+                 </a>
+                 <a href="https://music.apple.com/us/album/what-now/1822035115" target="_blank" onclick="event.stopPropagation();">
+                   <img src="images/badge-apl.png" alt="Apple Music" style="width: 60px; height: 60px;">
+                 </a>
+                 <a href="https://soundcloud.com/thefoolzero/sets/what-now" target="_blank" onclick="event.stopPropagation();">
+                   <img src="images/badge-sc.png" alt="SoundCloud" style="width: 60px; height: 60px;">
+                 </a>
+               </div>
+             </div>
+
+             <h2 class="font-weight-bold" style="font-size: 2.5rem; margin: 20px 0; cursor: pointer;" onclick="window.location.href='/what-now'">WHAT NOW</h2>
+             <p style="font-size: 18px; color: #ccc; margin-bottom: 30px; line-height: 1.6; cursor: pointer;" onclick="window.location.href='/what-now'">
+               Our first full-length album since the Audio Tarot.<br>
+               <em>A journey through sound and emotion, exploring what comes next.</em>
+             </p>
+             <div class="btn btn-secondary" style="font-size: 1.4rem; padding: 15px 40px; margin: 20px 0; cursor: pointer;" onclick="window.location.href='/what-now'">More Info & Full Album ✋💀🔥🍾</div>
            </div>
         </div>
       </div>
