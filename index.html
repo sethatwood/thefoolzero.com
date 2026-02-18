@@ -1,152 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ERPZVTBVS"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-0ERPZVTBVS');
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="The Fool Zero ✋💀🔥🍾 Audio Tarot" />
-    <meta property="og:description" content="An eclectic blend of polyrhythmic and polymelodic dub electronica, encapsulated in a 5-album tarot deck." />
-    <meta property="og:image" content="https://thefoolzero.com/images/og.png" />
-    <meta property="og:url" content="https://thefoolzero.com" />
-    <meta property="og:type" content="website" />
-    <title>The Fool Zero ✋💀🔥🍾 Audio Tarot</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="main.css">
-  </head>
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ERPZVTBVS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <body>
-    <div class="container text-center">
-      <img src="tfz-enso.png" alt="The Fool Zero Enso" class="top-image">
+    gtag('config', 'G-0ERPZVTBVS');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="The Fool Zero ✋💀🔥🍾 Audio Tarot" />
+  <meta property="og:description"
+    content="An eclectic blend of polyrhythmic and polymelodic dub electronica, encapsulated in a 5-album tarot deck." />
+  <meta property="og:image" content="https://thefoolzero.com/images/og.png" />
+  <meta property="og:url" content="https://thefoolzero.com" />
+  <meta property="og:type" content="website" />
+  <title>The Fool Zero ✋💀🔥🍾 Audio Tarot</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="main.css">
+</head>
 
-      <h1 class="font-weight-bold">THE&nbsp;FOOL&nbsp;ZERO <span class="nowrap">✋💀🔥🍾</span> AUDIO&nbsp;TAROT</h1>
-      <p>
-        An eclectic blend of polyrhythmic and polymelodic dub electronica, encapsulated in a <span class="nowrap">5-album tarot deck.</span>
-      </p>
+<body>
+  <div class="container text-center">
+    <img src="tfz-enso.png" alt="The Fool Zero Enso" class="top-image">
 
-      <button id="randomCardBtn" class="btn btn-lg btn-secondary mt-4">Draw a Card</button>
+    <h1 class="font-weight-bold">THE&nbsp;FOOL&nbsp;ZERO <span class="nowrap">✋💀🔥🍾</span> AUDIO&nbsp;TAROT</h1>
+    <p>
+      An eclectic blend of polyrhythmic and polymelodic dub electronica, encapsulated in a <span class="nowrap">5-album
+        tarot deck.</span>
+    </p>
 
-      <div id="shufflePlaylist" class="mt-4">
-        <p style="font-size: 20px;">or shuffle the playlist:</p>
-        <a href="https://open.spotify.com/playlist/6yf2NmAFVyL2ipbOIIvFgt" target="_blank" style="margin-right: 20px;">
-          <img src="images/badge-spot.png" alt="Spotify Playlist" style="width: 96px; height: 96px;">
-        </a>
-        <a href="https://youtube.com/playlist?list=PL_rGniII419Z4ClAz7-ZtlCqHxgem5nWH&si=nKooycbgbJJdaR1a" target="_blank">
-          <img src="images/badge-yt.png" alt="YouTube Playlist" style="width: 96px; height: 96px;">
-        </a>
-        <a href="https://soundcloud.com/thefoolzero/sets/the-fool-zero-audio-tarot" target="_blank" style="margin-left: 20px;">
-          <img src="images/badge-sc.png" alt="SoundCloud Playlist" style="width: 96px; height: 96px;">
-        </a>
-      </div>
+    <button id="randomCardBtn" class="btn btn-lg btn-secondary mt-4">Draw a Card</button>
 
-      <div id="tarotGrid" class="tarot-grid">
-        <!-- Tarot cards will be added here by JavaScript -->
-      </div>
-
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="tarotModal"
-        tabindex="-1"
-        aria-labelledby="tarotModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="tarotModalLabel">Card Title</h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <!-- Tarot card information will go here -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Persistent New Album Link -->
-      <div class="mt-5 mb-4">
-        <p>
-          <a href="/what-now" class="btn btn-lg btn-secondary">Listen to What Now ✋💀🔥🍾</a>
-        </p>
-        <p style="font-size: 14px; color: #ccc;">
-          Our first full-length album since the Audio Tarot
-        </p>
-      </div>
-
-      <footer>
-          <p>&copy; <span id="year"></span> The Fool Zero • <a href="mailto:fool@thefoolzero.com" target="_blank">fool@thefoolzero.com</a></p>
-      </footer>
+    <div id="shufflePlaylist" class="mt-4">
+      <p style="font-size: 20px;">or shuffle the playlist:</p>
+      <a href="https://open.spotify.com/playlist/6yf2NmAFVyL2ipbOIIvFgt" target="_blank" style="margin-right: 20px;">
+        <img src="images/badge-spot.png" alt="Spotify Playlist" style="width: 96px; height: 96px;">
+      </a>
+      <a href="https://youtube.com/playlist?list=PL_rGniII419Z4ClAz7-ZtlCqHxgem5nWH&si=nKooycbgbJJdaR1a"
+        target="_blank">
+        <img src="images/badge-yt.png" alt="YouTube Playlist" style="width: 96px; height: 96px;">
+      </a>
+      <a href="https://soundcloud.com/thefoolzero/sets/the-fool-zero-audio-tarot" target="_blank"
+        style="margin-left: 20px;">
+        <img src="images/badge-sc.png" alt="SoundCloud Playlist" style="width: 96px; height: 96px;">
+      </a>
     </div>
 
-    <!-- New Album Announcement Modal -->
-    <div class="modal fade" id="newAlbumModal" tabindex="-1" aria-labelledby="newAlbumModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div id="tarotGrid" class="tarot-grid">
+      <!-- Tarot cards will be added here by JavaScript -->
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="tarotModal" tabindex="-1" aria-labelledby="tarotModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
-          <div class="modal-header" style="border-bottom: 1px dotted grey;">
-            <h4 class="modal-title font-weight-bold" id="newAlbumModalLabel" style="font-size: 1.8rem;">🎵 NEW ALBUM 🎵</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 1.8rem;">
+          <div class="modal-header">
+            <h5 class="modal-title" id="tarotModalLabel">Card Title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-                     <div class="modal-body text-center" style="padding: 40px;">
-             <img src="images/what-now.jpg" alt="What Now Album Cover" style="width: 300px; height: 300px; object-fit: cover; margin: 20px auto; display: block; border: 1px dotted grey; box-shadow: 0 8px 16px rgba(255,255,255,0.1); cursor: pointer;" onclick="window.location.href='/what-now'">
-
-             <!-- Streaming Service Badges -->
-             <div class="mt-3 mb-4">
-               <div class="d-flex justify-content-center flex-wrap" style="gap: 15px;">
-                 <a href="https://open.spotify.com/album/7HSRsE1hkD9CUqrxMRpGV5?si=-sjAT12USeGIZ2614mDgDA" target="_blank" onclick="event.stopPropagation();">
-                   <img src="images/badge-spot.png" alt="Spotify" style="width: 60px; height: 60px;">
-                 </a>
-                 <a href="https://music.youtube.com/playlist?list=OLAK5uy_k7G3HTcJ2E8YIOrQNQbpFDBjgG4KZRwNQ" target="_blank" onclick="event.stopPropagation();">
-                   <img src="images/badge-yt.png" alt="YouTube Music" style="width: 60px; height: 60px;">
-                 </a>
-                 <a href="https://music.apple.com/us/album/what-now/1822035115" target="_blank" onclick="event.stopPropagation();">
-                   <img src="images/badge-apl.png" alt="Apple Music" style="width: 60px; height: 60px;">
-                 </a>
-                 <a href="https://soundcloud.com/thefoolzero/sets/what-now" target="_blank" onclick="event.stopPropagation();">
-                   <img src="images/badge-sc.png" alt="SoundCloud" style="width: 60px; height: 60px;">
-                 </a>
-               </div>
-             </div>
-
-             <h2 class="font-weight-bold" style="font-size: 2.5rem; margin: 20px 0; cursor: pointer;" onclick="window.location.href='/what-now'">WHAT NOW</h2>
-             <p style="font-size: 18px; color: #ccc; margin-bottom: 30px; line-height: 1.6; cursor: pointer;" onclick="window.location.href='/what-now'">
-               Our first full-length album since the Audio Tarot.<br>
-               <em>A journey through sound and emotion, exploring what comes next.</em>
-             </p>
-             <div class="btn btn-secondary" style="font-size: 1.4rem; padding: 15px 40px; margin: 20px 0; cursor: pointer;" onclick="window.location.href='/what-now'">More Info & Full Album ✋💀🔥🍾</div>
-           </div>
+          <div class="modal-body">
+            <!-- Tarot card information will go here -->
+          </div>
         </div>
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
+    <!-- Persistent Links -->
+    <div class="mt-5 mb-4">
+      <p>
+        <a href="https://www.youtube.com/playlist?list=PL_rGniII419YkFVhmbckrIHdsh7UbP0tR" target="_blank"
+          class="btn btn-lg btn-secondary">Listen to The Fool Zero '26 ✋💀🔥🍾</a>
+      </p>
+      <p style="font-size: 14px; color: #ccc;">
+        16 AI-native singles — 2026
+      </p>
+      <p class="mt-3">
+        <a href="/what-now" class="btn btn-sm btn-outline-secondary">Listen to What Now</a>
+      </p>
+    </div>
 
-    <script>
-      // Show new album modal on page load
-      $(document).ready(function() {
-        $('#newAlbumModal').modal('show');
-      });
-    </script>
-  </body>
+    <footer>
+      <p>&copy; <span id="year"></span> The Fool Zero • <a href="mailto:fool@thefoolzero.com"
+          target="_blank">fool@thefoolzero.com</a></p>
+    </footer>
+  </div>
+
+  <!-- New Singles Collection Modal -->
+  <div class="modal fade" id="newAlbumModal" tabindex="-1" aria-labelledby="newAlbumModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="border-bottom: 1px dotted grey;">
+          <h4 class="modal-title font-weight-bold" id="newAlbumModalLabel" style="font-size: 1.8rem;">🎵 NEW SINGLES 🎵
+          </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 1.8rem;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center" style="padding: 40px;">
+          <a href="https://thefoolzero.com/2026-singles" target="_blank"><img src="images/elsewhere.jpg"
+              alt="The Fool Zero '26 Cover"
+              style="width: 300px; height: 300px; object-fit: cover; margin: 20px auto; display: block; border: 1px dotted grey; box-shadow: 0 8px 16px rgba(255,255,255,0.1); cursor: pointer;"></a>
+          <h2 class="font-weight-bold" style="font-size: 2.5rem; margin: 20px 0;">THE FOOL ZERO '26</h2>
+          <p style="font-size: 18px; color: #ccc; margin-bottom: 10px;"><em>16 AI-native singles — 2026</em></p>
+          <p style="font-size: 16px; color: #ccc; margin-bottom: 30px; line-height: 1.6;">
+            16 songs made in collaboration with Claude and Suno. Lyrics, style prompts, and cover art direction all
+            developed with AI. Released on all major platforms in early 2026.
+          </p>
+
+          <!-- Streaming Service Badges -->
+          <div class="mt-3 mb-4">
+            <div class="d-flex justify-content-center flex-wrap" style="gap: 15px;">
+              <a href="https://open.spotify.com/playlist/62utEid6x2r3KVaDc7Fmay" target="_blank">
+                <img src="images/badge-spot.png" alt="Spotify" style="width: 60px; height: 60px;">
+              </a>
+              <a href="https://www.youtube.com/playlist?list=PL_rGniII419YkFVhmbckrIHdsh7UbP0tR" target="_blank">
+                <img src="images/badge-yt.png" alt="YouTube" style="width: 60px; height: 60px;">
+              </a>
+              <a href="https://soundcloud.com/thefoolzero/sets/the-fool-zero-26" target="_blank">
+                <img src="images/badge-sc.png" alt="SoundCloud" style="width: 60px; height: 60px;">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+
+  <script>
+    // Show new album modal on page load
+    $(document).ready(function () {
+      $('#newAlbumModal').modal('show');
+    });
+  </script>
+</body>
+
 </html>
